@@ -143,4 +143,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
 
-server.listen(3012, () => console.log("Server running on port 3012"));
+// Start server
+const PORT = process.env.PORT || 5555;
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on http://<System-A-public-IP>:${PORT}`);
+});
